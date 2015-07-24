@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properities -->
+  <title>ExcelSource</title>
+  <script src="jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <script src="semantic/dist/semantic.min.js"></script>
+
+  <style type="text/css">
+    body {
+      font-weight: 300;
+      background-color: transparent;
+    }
+    body > .grid {
+      height: 100%;
+    }
+
+  </style>
+  <script>
+  $(document)
+    .ready(function() {
+      $('.ui.form')
+        .form({
+          fields: {
+            email: {
+              identifier  : 'email',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Please enter your e-mail'
+                },
+                {
+                  type   : 'email',
+                  prompt : 'Please enter a valid e-mail'
+                }
+              ]
+            }
+          }
+        })
+      ;
+    })
+  ;
+  </script>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,300italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h1 class="ui huge header" style="font-weight:300; font-size: 3em;">
+        Source code for <strong>Excel spreadsheets</strong>
+    </h1>
+
+    <div class="ui middle aligned center aligned grid">
+      <div class="six wide left aligned column">
+        <p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span id="docs-internal-guid-de0c5298-bfa2-f826-988f-cec77b6d7a48"><span style="font-family:arial; font-size:14.6666666666667px; vertical-align:baseline; white-space:pre-wrap">We&#39;re building &quot;source code for Excel&quot;. The goal is to give people who create models and tools in Excel the advantages of having a source code to what they are building and maintaining.</span></span></p>
+&nbsp;
+
+<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span id="docs-internal-guid-de0c5298-bfa2-f826-988f-cec77b6d7a48"><span style="font-family:arial; font-size:14.6666666666667px; vertical-align:baseline; white-space:pre-wrap">Excel has huge capabilities and is de facto the most popular &ldquo;programming language&rdquo; out there. However, it is challenging and time-consuming to build spreadsheets that are really solid, minimize the chance of errors, that can be unit-tested and version controlled.</span></span></p>
+&nbsp;
+
+<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span id="docs-internal-guid-de0c5298-bfa2-f826-988f-cec77b6d7a48"><span style="font-family:arial; font-size:14.6666666666667px; vertical-align:baseline; white-space:pre-wrap">The idea is to create a declarative language which lets you describe fields, tables and worksheets in spreadsheet. You are encouraged to use names instead of cell coordinates. For formulas you just use Excel&rsquo;s formula language. There&rsquo;s a simple &ldquo;compiler&rdquo; that converts that into a spreadsheet.</span></span></p>
+&nbsp;
+
+<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span id="docs-internal-guid-de0c5298-bfa2-f826-988f-cec77b6d7a48"><span style="font-family:arial; font-size:14.6666666666667px; vertical-align:baseline; white-space:pre-wrap">Compared to regular Excel:</span></span></p>
+
+<ul style="margin-top:0pt;margin-bottom:0pt;">
+<li dir="ltr" style="list-style-type: disc; font-size: 14.6666666666667px; font-family: Arial; vertical-align: baseline;">
+<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span id="docs-internal-guid-de0c5298-bfa2-f826-988f-cec77b6d7a48"><span style="font-size:14.6666666666667px; vertical-align:baseline; white-space:pre-wrap">you can unit-test the source code</span></span></p>
+</li>
+<li dir="ltr" style="list-style-type: disc; font-size: 14.6666666666667px; font-family: Arial; vertical-align: baseline;">
+<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span id="docs-internal-guid-de0c5298-bfa2-f826-988f-cec77b6d7a48"><span style="font-size:14.6666666666667px; vertical-align:baseline; white-space:pre-wrap">you can keep it in version control</span></span></p>
+</li>
+<li dir="ltr" style="list-style-type: disc; font-size: 14.6666666666667px; font-family: Arial; vertical-align: baseline;">
+<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span id="docs-internal-guid-de0c5298-bfa2-f826-988f-cec77b6d7a48"><span style="font-size:14.6666666666667px; vertical-align:baseline; white-space:pre-wrap">it&rsquo;s much easier to read and reason about (it&rsquo;s auditable)</span></span></p>
+</li>
+<li dir="ltr" style="list-style-type: disc; font-size: 14.6666666666667px; font-family: Arial; vertical-align: baseline;">
+<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span id="docs-internal-guid-de0c5298-bfa2-f826-988f-cec77b6d7a48"><span style="font-size:14.6666666666667px; vertical-align:baseline; white-space:pre-wrap">the outcome is a spreadsheet that satisfies the best practices (e.g. formula cells are blocked, input cells are validated).</span></span></p>
+</li>
+</ul>
+
+<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><br>
+<span id="docs-internal-guid-de0c5298-bfa2-f826-988f-cec77b6d7a48"><span style="font-family:arial; font-size:14.6666666666667px; vertical-align:baseline; white-space:pre-wrap">If you&#39;re interested, you can subscribe to the waitlist (we won&#39;t spam you).<br>
+If you have any comments or questions please mail me at <a href="mailto:marek@exceltested.com?subject=Excel%20source" target="_blank">marek@exceltested.com</a>!</span></span></p>
+
+      </div>
+      <div class="six wide column">
+        <h2 class="ui huge header" style="font-weight:400; font-size:2em;">Sign-up for updates</h2>
+        <form class="ui large form" action="http://github.us11.list-manage.com/subscribe/post?u=798c4b73d4335bb72f024d009&amp;id=9769dbd847" method="post">
+          <div style="position: absolute; left: -5000px;"><input type="text" name="b_798c4b73d4335bb72f024d009_9769dbd847" tabindex="-1" value=""></div>
+          <input type="text" name="b_fb6fc0a92f4e009e98746c0bd_e60dc86f9e" tabindex="-1" value="" hidden>
+          <div class="ui grid">
+            <div class="ten wide column">
+                <div class="field">
+                  <div class="ui left big icon input">
+                    <input type="text" name="EMAIL" required placeholder="Enter your e-mail">
+                  </div>
+                </div>
+            </div>
+            <div class="six wide column">
+              <div class="ui fluid big green submit button">SIGN UP</div>
+            </div>
+          </div>
+
+          <div class="ui error message"></div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+
+</html>
